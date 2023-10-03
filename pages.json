@@ -1,50 +1,62 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-	    {
-            "path" : "pages/login/login",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "登录",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/home/home",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "首页",
-                "enablePullDownRefresh": true,
-				"topWindow": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/list/list",
-            "style" : {
-                "navigationBarTitleText": "列表",
-				"enablePullDownRefresh": true
-            }
-            
-        }
-    ],
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/list/list",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"scrollIndicator": "none",
+					"titleNView": {
+						"searchInput": {
+							"align": "left",
+							"borderRadius": "25px"
+						}
+					}
+				}
+			}
+
+		},
+		{
+			"path": "pages/game_common/plone",
+			"style": {
+				"navigationBarTitleText": "小灰机",
+				"enablePullDownRefresh": false,
+				"transparentTitle": "always"
+			}
+
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "首页",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#f4f4f4",
+		"backgroundColor": "#f0f0f0",
 		"app-plus": {
 			"scrollIndicator": "none"
-			
+
 		}
 	},
 	"uniIdRouter": {
-		"loginPage": "pages/home/home"
+		"loginPage": "pages/login/login"
 	},
 	"tabBar": {
 		"backgroundColor": "#ffffff",
-		"list": [
-			{
+		"list": [{
 				"iconPath": "static/home-hide.png",
 				"selectedIconPath": "static/home.png",
 				"pagePath": "pages/home/home",
@@ -64,5 +76,5 @@
 			}
 		]
 	}
-	
+
 }

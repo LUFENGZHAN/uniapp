@@ -4,8 +4,7 @@ var __commonJS = (cb, mod) => function __require() {
 };
 var require_app_css = __commonJS({
   "app.css.js"(exports) {
-    const _style_0 = {};
-    exports.styles = [_style_0];
+    exports.styles = [];
   }
 });
 export default require_app_css();
