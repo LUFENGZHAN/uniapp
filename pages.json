@@ -1,0 +1,68 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	    {
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "登录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "首页",
+                "enablePullDownRefresh": true,
+				"topWindow": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/list/list",
+            "style" : {
+                "navigationBarTitleText": "列表",
+				"enablePullDownRefresh": true
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "首页",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"scrollIndicator": "none"
+			
+		}
+	},
+	"uniIdRouter": {
+		"loginPage": "pages/home/home"
+	},
+	"tabBar": {
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"iconPath": "static/home-hide.png",
+				"selectedIconPath": "static/home.png",
+				"pagePath": "pages/home/home",
+				"text": "首页"
+			},
+			{
+				"iconPath": "static/list-hide.png",
+				"selectedIconPath": "static/list.png",
+				"pagePath": "pages/list/list",
+				"text": "列表"
+			},
+			{
+				"iconPath": "static/login-hide.png",
+				"selectedIconPath": "static/login.png",
+				"pagePath": "pages/login/login",
+				"text": "个人中心"
+			}
+		]
+	}
+	
+}
