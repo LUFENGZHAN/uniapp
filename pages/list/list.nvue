@@ -2,13 +2,13 @@
 	<view class="list">
 		<unicloud-db ref="udb" v-slot:default="{data, loading, error, options}" collection="game-list" :where="where">
 			<view class="s-25 m-auto" v-if="error">{{error.message}}</view>
+			<view ref="loading" class="loading" v-else-if="loading"></view>
 			<view v-else>
 				<uni-list>
 					<uni-list-item class="item" v-for="(item,i) in data" :key="i" :title="item.name" link
 						:to="item.to"></uni-list-item>
 				</uni-list>
 			</view>
-			<view ref="loading" class="loading"></view>
 		</unicloud-db>
 	</view>
 </template>
@@ -38,7 +38,9 @@
 			}, 500)
 		},
 		onLoad() {
-			console.log(this.$refs.loading);
+			uni.reLaunch({
+				url: '/pages/list/list'
+			});
 		},
 		methods: {
 			loadData() {
@@ -50,32 +52,11 @@
 
 <style scoped>
 	.m-auto {
-		margin: 50% auto;
+		margin: 50px auto;
 		text-align: center;
 	}
 
 	.s-25 {
 		font-size: 25px;
-	}
-
-	.loading {
-		font-size: 25px;
-		margin: 250vw auto;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		border: 2px solid aquamarine;
-		border-top-color: #fff;
-		animation: load 0.6s linear infinite;
-	}
-
-	@keyframes load {
-		from {
-			transform: rotate(0deg);
-		}
-
-		to {
-			transform: rotate(360deg);
-		}
 	}
 </style>

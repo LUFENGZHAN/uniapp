@@ -8,9 +8,14 @@
 	export default {
 		data() {
 			return {
-				videosList:["https://mp-2a0e68a1-4e42-4285-b25e-1462368efa7f.cdn.bspapp.com/videos/hy.mp4"]
+				videosList: ["https://mp-2a0e68a1-4e42-4285-b25e-1462368efa7f.cdn.bspapp.com/videos/hy.mp4"]
 			};
-		}
+		},
+		onLoad() {
+			uni.reLaunch({
+				url: '/pages/home/home'
+			});
+		},
 	}
 </script>
 
